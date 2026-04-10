@@ -1,11 +1,3 @@
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js';
-import {
-  addDoc,
-  collection,
-  getFirestore,
-  serverTimestamp
-} from 'https://www.gstatic.com/firebasejs/12.12.0/firebase-firestore.js';
-
 const statsData = {
   labels: ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
   users: [48, 61, 73, 91, 108, 131, 155]
@@ -29,8 +21,7 @@ const growthChartCanvas = document.getElementById('growthChart');
 const feedbackForm = document.getElementById('feedbackForm');
 const formStatus = document.getElementById('formStatus');
 const THEME_STORAGE_KEY = 'weblock-theme';
-const firebaseApp = initializeApp(firebaseConfig);
-const db = getFirestore(firebaseApp);
+const FIRESTORE_ENDPOINT = `https://firestore.googleapis.com/v1/projects/${firebaseConfig.projectId}/databases/(default)/documents/feedbacks?key=${firebaseConfig.apiKey}`;
 
 function applyTheme(theme) {
   const resolvedTheme = theme === 'system'
@@ -202,6 +193,33 @@ function setFormStatus(message, tone = 'neutral') {
   formStatus.className = `min-h-[1.5rem] text-sm ${toneClasses[tone] || toneClasses.neutral}`;
 }
 
+async function submitFeedback(payload) {
+  const response = await fetch(FIRESTORE_ENDPOINT, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      fields: {
+        name: { stringValue: payload.name },
+        email: { stringValue: payload.email },
+        message: { stringValue: payload.message },
+        source: { stringValue: 'weblock-website' },
+        createdAt: { timestampValue: new Date().toISOString() }
+      }
+    })
+  });
+
+  const result = await response.json().catch(() => ({}));
+
+  if (!response.ok) {
+    const errorMessage = result?.error?.message || 'Unable to save feedback.';
+    throw new Error(errorMessage);
+  }
+
+  return result;
+}
+
 function setupFeedbackForm() {
   if (!feedbackForm) {
     return;
@@ -232,17 +250,13 @@ function setupFeedbackForm() {
     setFormStatus('Sending your feedback...', 'neutral');
 
     try {
-      await addDoc(collection(db, 'feedbacks'), {
-        ...payload,
-        createdAt: serverTimestamp(),
-        source: 'weblock-website'
-      });
+      await submitFeedback(payload);
 
       feedbackForm.reset();
       setFormStatus('Thanks. Your feedback has been saved successfully.', 'success');
     } catch (error) {
       console.error('Error saving feedback:', error);
-      setFormStatus('Something went wrong while saving your feedback. Please try again.', 'error');
+      setFormStatus(error.message || 'Something went wrong while saving your feedback. Please try again.', 'error');
     } finally {
       if (submitButton) {
         submitButton.disabled = false;
