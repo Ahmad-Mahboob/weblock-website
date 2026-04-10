@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebLock | Lock Your Websites. Protect Your Privacy.</title>
+    <meta
+      name="description"
+      content="WebLock secures your browsing with password protection, website blocking, and smart privacy controls."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body
+    class="bg-white text-slate-900 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-white"
+  >
+    <div class="fixed inset-0 -z-20 bg-grid dark:opacity-40"></div>
+    <div
+      class="fixed inset-x-0 top-0 -z-10 h-[32rem] bg-[radial-gradient(circle_at_top,rgba(14,165,233,0.18),transparent_45%),radial-gradient(circle_at_20%_20%,rgba(52,211,153,0.12),transparent_25%)]"
+    ></div>
+
+    <header
+      class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/75 backdrop-blur-xl dark:border-white/10 dark:bg-slate-950/70"
+    >
+      <div
+        class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
+      >
+        <a href="#top" class="flex items-center gap-3">
+          <div
+            class="flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-900 text-lg font-semibold text-white shadow-glow dark:bg-white dark:text-slate-950"
+          >
+            W
+          </div>
+          <div>
+            <p
+              class="text-sm font-semibold tracking-[0.25em] text-skyline uppercase"
+            >
+              WebLock
+            </p>
+            <p class="text-xs text-slate-500 dark:text-slate-400">
+              Browser privacy extension
+            </p>
+          </div>
+        </a>
+        <nav
+          class="hidden items-center gap-8 text-sm text-slate-600 dark:text-slate-300 md:flex"
+        >
+          <a href="#features" class="transition hover:text-skyline">Features</a>
+          <a href="#analytics" class="transition hover:text-skyline"
+            >Analytics</a
+          >
+          <a href="#use-cases" class="transition hover:text-skyline"
+            >Use Cases</a
+          >
+          <a href="#contact" class="transition hover:text-skyline">Contact</a>
+        </nav>
+        <div class="flex items-center gap-3">
+          <button
+            id="themeToggle"
+            type="button"
+            class="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-lg dark:border-white/10 dark:bg-white/5 dark:text-slate-200"
+            aria-label="Toggle color mode"
+          >
+            Dark mode
+          </button>
+          <a
+            href="#contact"
+            class="hidden rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:shadow-glow dark:bg-white dark:text-slate-950 sm:inline-flex"
+            >Install Now</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section
+        class="mx-auto grid max-w-7xl items-center gap-16 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-28"
+      >
+        <div class="reveal">
+          <span
+            class="inline-flex rounded-full border border-skyline/20 bg-skyline/10 px-4 py-2 text-sm font-medium text-skyline"
+            >Privacy, blocking, and focus in one extension</span
+          >
+          <h1
+            class="mt-8 max-w-3xl text-5xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-6xl"
+          >
+            Lock Your Websites. Protect Your Privacy.
+          </h1>
+          <p
+            class="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300"
+          >
+            WebLock secures your browsing with password protection and smart
+            blocking. Keep private tabs safe, cut distractions fast, and stay in
+            control on every device you share.
+          </p>
+          <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+            <a
+              href="#contact"
+              class="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-base font-semibold text-white transition hover:-translate-y-0.5 hover:shadow-glow dark:bg-white dark:text-slate-950"
+              >Install Extension</a
+            >
+            <a
+              href="#demo"
+              class="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white/90 px-6 py-3 text-base font-semibold text-slate-800 transition hover:-translate-y-0.5 hover:border-slate-400 dark:border-white/10 dark:bg-white/5 dark:text-white"
+              >View Demo</a
+            >
+          </div>
+          <div
+            class="mt-10 flex flex-wrap gap-6 text-sm text-slate-500 dark:text-slate-400"
+          >
+            <div>
+              <span class="font-semibold text-slate-900 dark:text-white"
+                >155+</span
+              >
+              active users
+            </div>
+            <div>
+              <span class="font-semibold text-slate-900 dark:text-white"
+                >24/7</span
+              >
+              lock protection
+            </div>
+            <div>
+              <span class="font-semibold text-slate-900 dark:text-white"
+                >5 sec</span
+              >
+              setup flow
+            </div>
+          </div>
+        </div>
+
+        <div id="demo" class="reveal relative">
+          <div
+            class="absolute -left-8 top-12 h-24 w-24 rounded-full bg-skyline/20 blur-3xl"
+          ></div>
+          <div
+            class="absolute -right-2 bottom-0 h-28 w-28 rounded-full bg-emerald-400/20 blur-3xl"
+          ></div>
+          <div
+            class="glass relative mx-auto w-full max-w-xl rounded-[2rem] border border-white/20 bg-white/70 p-4 shadow-2xl shadow-slate-900/10 dark:border-white/10 dark:bg-white/5"
+          >
+            <div
+              class="rounded-[1.5rem] border border-slate-200 bg-slate-950 p-5 text-white dark:border-white/10"
+            >
+              <div
+                class="flex items-center justify-between border-b border-white/10 pb-4"
+              >
+                <div class="flex items-center gap-2">
+                  <span class="h-3 w-3 rounded-full bg-rose-400"></span>
+                  <span class="h-3 w-3 rounded-full bg-amber-300"></span>
+                  <span class="h-3 w-3 rounded-full bg-emerald-400"></span>
+                </div>
+                <div
+                  class="rounded-full border border-white/10 px-4 py-1 text-xs text-slate-300"
+                >
+                  weblock.app
+                </div>
+              </div>
+              <div class="grid gap-6 py-8 lg:grid-cols-[0.95fr_1.05fr]">
+                <div class="rounded-3xl border border-white/10 bg-white/5 p-5">
+                  <div
+                    class="mb-5 inline-flex h-14 w-14 animate-float items-center justify-center rounded-2xl bg-skyline/20 text-3xl"
+                  >
+                    🔒
+                  </div>
+                  <h3 class="text-2xl font-semibold">Protected by WebLock</h3>
+                  <p class="mt-3 text-sm leading-6 text-slate-300">
+                    This website is locked until the correct password is
+                    entered.
+                  </p>
+                  <div class="mt-6 space-y-3">
+                    <div
+                      class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-slate-400"
+                    >
+                      Enter password
+                    </div>
+                    <button
+                      class="w-full rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-slate-950"
+                    >
+                      Unlock Site
+                    </button>
+                  </div>
+                </div>
+                <div class="space-y-4">
+                  <div
+                    class="rounded-3xl border border-white/10 bg-white/5 p-4"
+                  >
+                    <div class="flex items-center justify-between">
+                      <div>
+                        <p
+                          class="text-xs uppercase tracking-[0.3em] text-slate-400"
+                        >
+                          Blocked sites
+                        </p>
+                        <p class="mt-2 text-3xl font-semibold">12</p>
+                      </div>
+                      <span
+                        class="rounded-full bg-emerald-400/20 px-3 py-1 text-xs text-emerald-300"
+                        >+18% this week</span
+                      >
+                    </div>
+                  </div>
+                  <div
+                    class="rounded-3xl border border-white/10 bg-gradient-to-br from-skyline/20 to-transparent p-4"
+                  >
+                    <p
+                      class="text-xs uppercase tracking-[0.3em] text-slate-400"
+                    >
+                      Focus mode
+                    </p>
+                    <p class="mt-2 text-lg font-medium text-white">
+                      Keep distractions locked from 9 AM to 5 PM.
+                    </p>
+                  </div>
+                  <div
+                    class="rounded-3xl border border-white/10 bg-white/5 p-4"
+                  >
+                    <div class="flex items-center justify-between text-sm">
+                      <span class="text-slate-400">Temporary unlock</span>
+                      <span class="font-semibold text-white">15 min</span>
+                    </div>
+                    <div class="mt-3 h-2 rounded-full bg-white/10">
+                      <div
+                        class="h-2 w-3/4 rounded-full bg-gradient-to-r from-skyline to-emerald-400"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+        <div class="reveal max-w-2xl">
+          <p
+            class="text-sm font-semibold uppercase tracking-[0.35em] text-skyline"
+          >
+            Features
+          </p>
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+            Everything you need to browse with control.
+          </h2>
+          <p class="mt-4 text-lg text-slate-600 dark:text-slate-300">
+            A focused toolkit for privacy, security, and better attention
+            management.
+          </p>
+        </div>
+        <div class="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-5">
+          <article
+            class="reveal rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl dark:border-white/10 dark:bg-white/5"
+          >
+            <div class="text-3xl">🔐</div>
+            <h3 class="mt-5 text-xl font-semibold">Password Protection</h3>
+            <p
+              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300"
+            >
+              Lock sensitive websites behind a password before anyone else can
+              access them.
+            </p>
+          </article>
+          <article
+            class="reveal rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl dark:border-white/10 dark:bg-white/5"
+          >
+            <div class="text-3xl">🚫</div>
+            <h3 class="mt-5 text-xl font-semibold">Website Blocking</h3>
+            <p
+              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300"
+            >
+              Block distracting sites instantly and create a cleaner, safer
+              browsing environment.
+            </p>
+          </article>
+          <article
+            class="reveal rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl dark:border-white/10 dark:bg-white/5"
+          >
+            <div class="text-3xl">⚡</div>
+            <h3 class="mt-5 text-xl font-semibold">Instant Lock Screen</h3>
+            <p
+              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300"
+            >
+              Display a clean browser lock screen the moment a protected domain
+              is opened.
+            </p>
+          </article>
+          <article
+            class="reveal rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl dark:border-white/10 dark:bg-white/5"
+          >
+            <div class="text-3xl">🧠</div>
+            <h3 class="mt-5 text-xl font-semibold">Focus Mode</h3>
+            <p
+              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300"
+            >
+              Coming soon: schedule deep-work windows that automatically lock
+              distracting domains.
+            </p>
+          </article>
+          <article
+            class="reveal rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl dark:border-white/10 dark:bg-white/5"
+          >
+            <div class="text-3xl">⏱️</div>
+            <h3 class="mt-5 text-xl font-semibold">Temporary Unlock</h3>
+            <p
+              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300"
+            >
+              Coming soon: permit short access sessions without fully disabling
+              your protection rules.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+        <div class="reveal mb-12 max-w-2xl">
+          <p
+            class="text-sm font-semibold uppercase tracking-[0.35em] text-skyline"
+          >
+            How It Works
+          </p>
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+            Set it up in minutes.
+          </h2>
+        </div>
+        <div
+          class="grid gap-6 lg:grid-cols-[1fr_auto_1fr_auto_1fr] lg:items-center"
+        >
+          <div
+            class="reveal rounded-3xl border border-slate-200 bg-white p-8 dark:border-white/10 dark:bg-white/5"
+          >
+            <div class="text-4xl">1.</div>
+            <h3 class="mt-4 text-xl font-semibold">Add websites to lock</h3>
+            <p
+              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300"
+            >
+              Choose the domains you want WebLock to protect or block.
+            </p>
+          </div>
+          <div
+            class="reveal hidden text-4xl text-slate-300 lg:block dark:text-slate-700"
+          >
+            →
+          </div>
+          <div
+            class="reveal rounded-3xl border border-slate-200 bg-white p-8 dark:border-white/10 dark:bg-white/5"
+          >
+            <div class="text-4xl">2.</div>
+            <h3 class="mt-4 text-xl font-semibold">Set your password</h3>
+            <p
+              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300"
+            >
+              Create a private unlock password for sensitive or distracting
+              websites.
+            </p>
+          </div>
+          <div
+            class="reveal hidden text-4xl text-slate-300 lg:block dark:text-slate-700"
+          >
+            →
+          </div>
+          <div
+            class="reveal rounded-3xl border border-slate-200 bg-white p-8 dark:border-white/10 dark:bg-white/5"
+          >
+            <div class="text-4xl">3.</div>
+            <h3 class="mt-4 text-xl font-semibold">Websites stay locked</h3>
+            <p
+              class="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300"
+            >
+              Protected sites remain inaccessible until they are unlocked by
+              you.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="analytics" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+        <div class="reveal mb-12 max-w-2xl">
+          <p
+            class="text-sm font-semibold uppercase tracking-[0.35em] text-skyline"
+          >
+            Analytics
+          </p>
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+            A modern growth snapshot.
+          </h2>
+          <p class="mt-4 text-lg text-slate-600 dark:text-slate-300">
+            Local data powers this preview dashboard, ready to connect to real
+            extension metrics later.
+          </p>
+        </div>
+        <div class="grid gap-6 xl:grid-cols-[0.95fr_1.05fr]">
+          <div
+            class="reveal glass rounded-[2rem] border border-slate-200/80 bg-white/70 p-7 shadow-xl shadow-slate-900/5 dark:border-white/10 dark:bg-white/5"
+          >
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div
+                class="rounded-3xl border border-slate-200/70 bg-white/80 p-5 dark:border-white/10 dark:bg-slate-950/40"
+              >
+                <p class="text-sm text-slate-500 dark:text-slate-400">
+                  Total Users
+                </p>
+                <p class="mt-4 text-4xl font-semibold">
+                  <span data-counter="155">0</span>+
+                </p>
+              </div>
+              <div
+                class="rounded-3xl border border-slate-200/70 bg-white/80 p-5 dark:border-white/10 dark:bg-slate-950/40"
+              >
+                <p class="text-sm text-slate-500 dark:text-slate-400">
+                  Weekly Growth
+                </p>
+                <p class="mt-4 text-4xl font-semibold">
+                  <span data-counter="18">0</span>%
+                </p>
+              </div>
+              <div
+                class="rounded-3xl border border-slate-200/70 bg-white/80 p-5 dark:border-white/10 dark:bg-slate-950/40"
+              >
+                <p class="text-sm text-slate-500 dark:text-slate-400">
+                  Sites Protected
+                </p>
+                <p class="mt-4 text-4xl font-semibold">
+                  <span data-counter="420">0</span>+
+                </p>
+              </div>
+              <div
+                class="rounded-3xl border border-slate-200/70 bg-white/80 p-5 dark:border-white/10 dark:bg-slate-950/40"
+              >
+                <p class="text-sm text-slate-500 dark:text-slate-400">
+                  Avg. Focus Gain
+                </p>
+                <p class="mt-4 text-4xl font-semibold">
+                  <span data-counter="11">0</span> hrs
+                </p>
+              </div>
+            </div>
+            <div
+              class="mt-6 rounded-3xl border border-slate-200/70 bg-white/80 p-6 dark:border-white/10 dark:bg-slate-950/40"
+            >
+              <div class="flex flex-wrap items-center justify-between gap-4">
+                <div>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">
+                    Weekly indicators
+                  </p>
+                  <h3 class="mt-2 text-xl font-semibold">
+                    Consistent adoption trend
+                  </h3>
+                </div>
+                <div
+                  class="rounded-full bg-emerald-400/15 px-4 py-2 text-sm font-medium text-emerald-600 dark:text-emerald-300"
+                >
+                  +12 new installs this week
+                </div>
+              </div>
+              <div class="mt-5 grid gap-4 sm:grid-cols-3">
+                <div class="rounded-2xl bg-slate-100 px-4 py-4 dark:bg-white/5">
+                  <p class="text-xs uppercase tracking-[0.3em] text-slate-400">
+                    Mon
+                  </p>
+                  <p class="mt-3 text-2xl font-semibold">24</p>
+                </div>
+                <div class="rounded-2xl bg-slate-100 px-4 py-4 dark:bg-white/5">
+                  <p class="text-xs uppercase tracking-[0.3em] text-slate-400">
+                    Wed
+                  </p>
+                  <p class="mt-3 text-2xl font-semibold">39</p>
+                </div>
+                <div class="rounded-2xl bg-slate-100 px-4 py-4 dark:bg-white/5">
+                  <p class="text-xs uppercase tracking-[0.3em] text-slate-400">
+                    Fri
+                  </p>
+                  <p class="mt-3 text-2xl font-semibold">52</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="reveal glass rounded-[2rem] border border-slate-200/80 bg-white/70 p-7 shadow-xl shadow-slate-900/5 dark:border-white/10 dark:bg-white/5"
+          >
+            <div class="mb-6 flex items-start justify-between gap-4">
+              <div>
+                <p class="text-sm text-slate-500 dark:text-slate-400">
+                  Growth graph
+                </p>
+                <h3 class="mt-2 text-2xl font-semibold">
+                  User growth over the last 7 days
+                </h3>
+              </div>
+              <span
+                class="rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-sm text-slate-600 dark:border-white/10 dark:bg-white/5 dark:text-slate-300"
+                >Live preview</span
+              >
+            </div>
+            <div class="h-80">
+              <canvas id="growthChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="use-cases" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+        <div class="reveal mb-12 max-w-2xl">
+          <p
+            class="text-sm font-semibold uppercase tracking-[0.35em] text-skyline"
+          >
+            Use Cases
+          </p>
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+            Built for real browsing habits.
+          </h2>
+        </div>
+        <div class="grid gap-6 md:grid-cols-3">
+          <article
+            class="reveal rounded-3xl border border-slate-200 bg-white p-8 dark:border-white/10 dark:bg-white/5"
+          >
+            <h3 class="text-2xl font-semibold">Students</h3>
+            <p
+              class="mt-4 text-sm leading-6 text-slate-600 dark:text-slate-300"
+            >
+              Stay focused during study sessions by locking social media and
+              entertainment sites until break time.
+            </p>
+          </article>
+          <article
+            class="reveal rounded-3xl border border-slate-200 bg-white p-8 dark:border-white/10 dark:bg-white/5"
+          >
+            <h3 class="text-2xl font-semibold">Shared Computers</h3>
+            <p
+              class="mt-4 text-sm leading-6 text-slate-600 dark:text-slate-300"
+            >
+              Protect personal dashboards, mailboxes, and private tabs from
+              curious coworkers or family members.
+            </p>
+          </article>
+          <article
+            class="reveal rounded-3xl border border-slate-200 bg-white p-8 dark:border-white/10 dark:bg-white/5"
+          >
+            <h3 class="text-2xl font-semibold">Professionals</h3>
+            <p
+              class="mt-4 text-sm leading-6 text-slate-600 dark:text-slate-300"
+            >
+              Reduce context switching and keep your browser aligned with deep
+              work priorities.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+        <div class="reveal mb-12 max-w-2xl">
+          <p
+            class="text-sm font-semibold uppercase tracking-[0.35em] text-skyline"
+          >
+            Testimonials
+          </p>
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+            Early feedback looks strong.
+          </h2>
+        </div>
+        <div class="grid gap-6 lg:grid-cols-2">
+          <blockquote
+            class="reveal rounded-3xl border border-slate-200 bg-white p-8 dark:border-white/10 dark:bg-white/5"
+          >
+            <p class="text-lg leading-8">
+              “Helped me stop distractions fast. I use it every time I start a
+              study block.”
+            </p>
+            <footer class="mt-6 text-sm text-slate-500 dark:text-slate-400">
+              Hamid Mahboob, Student Developer
+            </footer>
+          </blockquote>
+          <blockquote
+            class="reveal rounded-3xl border border-slate-200 bg-white p-8 dark:border-white/10 dark:bg-white/5"
+          >
+            <p class="text-lg leading-8">
+              “Simple and powerful. It solves a real privacy problem on shared
+              devices.”
+            </p>
+            <footer class="mt-6 text-sm text-slate-500 dark:text-slate-400">
+              MM Qamar, Professional
+            </footer>
+          </blockquote>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+        <div
+          class="reveal overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-950 px-8 py-14 text-white shadow-2xl shadow-slate-900/15 dark:border-white/10"
+        >
+          <div class="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
+              <p
+                class="text-sm font-semibold uppercase tracking-[0.35em] text-skyline"
+              >
+                Start Now
+              </p>
+              <h2
+                class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl"
+              >
+                Start Protecting Your Browser Today
+              </h2>
+              <p class="mt-4 max-w-2xl text-lg text-slate-300">
+                WebLock helps you keep browsing private, distraction-free, and
+                under your control from the first install.
+              </p>
+            </div>
+            <a
+              href="#contact"
+              class="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-base font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-slate-100"
+              >Install Extension</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+        <div class="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <div class="reveal">
+            <p
+              class="text-sm font-semibold uppercase tracking-[0.35em] text-skyline"
+            >
+              Contact
+            </p>
+            <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+              Send feedback or request early access.
+            </h2>
+            <p class="mt-4 text-lg text-slate-600 dark:text-slate-300">
+              Use this form to collect interest, support requests, or beta
+              signups while the extension grows.
+            </p>
+          </div>
+          <form
+            id="feedbackForm"
+            class="reveal rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm dark:border-white/10 dark:bg-white/5"
+          >
+            <div class="grid gap-6">
+              <label class="grid gap-2 text-sm font-medium">
+                Name
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  required
+                  placeholder="Your name"
+                  class="rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-skyline focus:ring-4 focus:ring-skyline/10 dark:border-white/10 dark:bg-slate-950 dark:text-white"
+                />
+              </label>
+              <label class="grid gap-2 text-sm font-medium">
+                Email
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="you@example.com"
+                  class="rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-skyline focus:ring-4 focus:ring-skyline/10 dark:border-white/10 dark:bg-slate-950 dark:text-white"
+                />
+              </label>
+              <label class="grid gap-2 text-sm font-medium">
+                Message
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  placeholder="Tell us what you'd like WebLock to help with."
+                  class="rounded-2xl border border-slate-300 bg-white px-4 py-3 text-slate-900 outline-none transition focus:border-skyline focus:ring-4 focus:ring-skyline/10 dark:border-white/10 dark:bg-slate-950 dark:text-white"
+                ></textarea>
+              </label>
+              <button
+                type="submit"
+                class="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-base font-semibold text-white transition hover:-translate-y-0.5 hover:shadow-glow dark:bg-white dark:text-slate-950"
+              >
+                Submit
+              </button>
+              <p
+                id="formStatus"
+                class="min-h-[1.5rem] text-sm text-slate-500 dark:text-slate-400"
+                aria-live="polite"
+              ></p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200 py-8 dark:border-white/10">
+      <div
+        class="mx-auto flex max-w-7xl flex-col gap-4 px-6 text-sm text-slate-500 dark:text-slate-400 lg:flex-row lg:items-center lg:justify-between lg:px-8"
+      >
+        <p>© 2026 WebLock. Built for privacy, focus, and safer browsing.</p>
+        <div class="flex flex-wrap gap-6">
+          <a href="#top" class="transition hover:text-skyline">Home</a>
+          <a href="#features" class="transition hover:text-skyline">Features</a>
+          <a href="#contact" class="transition hover:text-skyline">Contact</a>
+          <a href="#" class="transition hover:text-skyline">Privacy Policy</a>
+          <a href="#" class="transition hover:text-skyline">GitHub</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./node_modules/chart.js/dist/chart.umd.js"></script>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "weblock-website",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/styles.css -o ./styles.css --minify",
+    "watch:css": "tailwindcss -i ./src/styles.css -o ./styles.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Landing page for the WebLock browser extension.",
+  "dependencies": {
+    "chart.js": "^4.5.1",
+    "tailwindcss": "^3.4.17"
+  }
+}
