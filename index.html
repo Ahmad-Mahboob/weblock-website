@@ -8,7 +8,11 @@
       name="description"
       content="WebLock secures your browsing with password protection, website blocking, and smart privacy controls."
     />
-    <link rel="icon" type="image/x-icon" href="./logo.ico" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body
@@ -68,6 +72,7 @@
             Dark mode
           </button>
           <a
+            onclick="trackInstall()"
             href="https://microsoftedge.microsoft.com/addons/detail/weblock-%E2%80%93-secure-your-web/foichkclkahpepfcibbnpihchhdhgfac"
             target="_blank"
             rel="noopener noreferrer"
@@ -103,6 +108,7 @@
             <a
               href="https://microsoftedge.microsoft.com/addons/detail/weblock-%E2%80%93-secure-your-web/foichkclkahpepfcibbnpihchhdhgfac"
               target="_blank"
+              onclick="trackInstall()"
               rel="noopener noreferrer"
               class="inline-flex items-center justify-center rounded-full bg-slate-900 px-6 py-3 text-base font-semibold text-white transition hover:-translate-y-0.5 hover:shadow-glow dark:bg-white dark:text-slate-950"
               >Install Extension</a
@@ -613,6 +619,7 @@
               </p>
             </div>
             <a
+              onclick="trackInstall()"
               href="https://microsoftedge.microsoft.com/addons/detail/weblock-%E2%80%93-secure-your-web/foichkclkahpepfcibbnpihchhdhgfac"
               target="_blank"
               rel="noopener noreferrer"
@@ -708,6 +715,40 @@
         </div>
       </div>
     </footer>
+    <script>
+      if (window.location.hostname !== "localhost") {
+        const script = document.createElement("script");
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-ZWTLYSRW5Y";
+        script.async = true;
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+          dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+        gtag("config", "G-ZWTLYSRW5Y");
+      }
+      function trackInstall(event) {
+        event.preventDefault(); // stop immediate redirect
+
+        const url = event.currentTarget.href;
+
+        gtag("event", "install_click", {
+          event_category: "conversion",
+          event_label: "WebLock Install",
+          transport_type: "beacon",
+          event_callback: function () {
+            window.location.href = url; // redirect AFTER tracking
+          },
+        });
+
+        // fallback (in case callback fails)
+        setTimeout(function () {
+          window.location.href = url;
+        }, 1000);
+      }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- <script src="./node_modules/chart.js/dist/chart.umd.js"></script> -->
     <script type="module" src="./script.js"></script>
