@@ -715,35 +715,65 @@
         </div>
       </div>
     </footer>
-    <script>
-      if (window.location.hostname !== "localhost") {
-        const script = document.createElement("script");
-        script.src = "https://www.googletagmanager.com/gtag/js?id=G-ZWTLYSRW5Y";
-        script.async = true;
-        document.head.appendChild(script);
 
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-          dataLayer.push(arguments);
-        }
-        gtag("js", new Date());
-        gtag("config", "G-ZWTLYSRW5Y");
+    <!-- Google Analytics -->
+
+    <script>
+      // Always define gtag (prevents undefined errors)
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
       }
+
+      const hostname = window.location.hostname;
+
+      const isLocal = hostname === "localhost" || hostname === "127.0.0.1";
+
+      const isProduction =
+        hostname === "ahmadmahboob.me" || hostname === "www.ahmadmahboob.me";
+
+      // Load GA script
+      const script = document.createElement("script");
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-ZWTLYSRW5Y";
+      script.async = true;
+      document.head.appendChild(script);
+
+      script.onload = () => {
+        gtag("js", new Date());
+
+        if (isProduction) {
+          gtag("config", "G-ZWTLYSRW5Y");
+        } else {
+          // No tracking locally
+          gtag("config", "G-ZWTLYSRW5Y", {
+            send_page_view: false,
+            debug_mode: true,
+          });
+        }
+      };
+
+      // Track install click safely
       function trackInstall(event) {
-        event.preventDefault(); // stop immediate redirect
+        event.preventDefault();
 
         const url = event.currentTarget.href;
+
+        // If gtag not ready, redirect immediately
+        if (typeof gtag !== "function") {
+          window.location.href = url;
+          return;
+        }
 
         gtag("event", "install_click", {
           event_category: "conversion",
           event_label: "WebLock Install",
           transport_type: "beacon",
           event_callback: function () {
-            window.location.href = url; // redirect AFTER tracking
+            window.location.href = url;
           },
         });
 
-        // fallback (in case callback fails)
+        // Fallback redirect
         setTimeout(function () {
           window.location.href = url;
         }, 1000);
