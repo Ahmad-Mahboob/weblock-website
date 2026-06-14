@@ -1,6 +1,6 @@
 const statsData = {
   labels: ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-  users: [48, 61, 73, 91, 108, 131, 155]
+  users: [131, 155, 163, 178, 191, 204, 216]
 };
 
 const firebaseConfig = {
